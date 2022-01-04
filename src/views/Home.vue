@@ -1,18 +1,26 @@
-<template>
-  <div class="home">
+<template> 
+    <SideNav></SideNav>
     
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- content -->
+  <div class="flex-1 p-10 text-2xl items-center font-bold">
+    <router-view></router-view>
   </div>
+  
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import SideNav from '../components/SideNav.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    SideNav
+}
 }
 </script>
+
+<style>
+
+</style>

@@ -1,4 +1,5 @@
 <template>
+
     <div class="">
     <!-- <SideNav/> -->
     <!-- <router-link to="/">Dashboard</router-link> |
@@ -16,11 +17,11 @@
 </style>
 
 <script>
+// import SideNav from "./components/SideNav.vue";
 
-// import SideNav from './components/SideNav.vue'
 
 // export default {
-//   name: 'Home',
+  
 //   components: {
 //     SideNav
 // }

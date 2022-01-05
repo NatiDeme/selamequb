@@ -95,7 +95,7 @@
          
         </router-link > 
         <router-link class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
-          to="/about"
+          to="/admins"
           active-class="active"
           tag="button"
           exact>
@@ -120,7 +120,10 @@
       </nav>
       
     </div>
-    
+     <!-- content -->
+  <div class="flex-1 p-10 text-2xl font-bold">
+    <router-view/>
+  </div>
   </div>
 </template>
 <script>

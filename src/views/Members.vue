@@ -1,16 +1,46 @@
 <template>
   <div class="members">
     <header><h1>Registered Members</h1></header>
-    <div class="p-10 flex w-full bg-gray-600 rounded-md">
-      <div class="flex-none bg-red-800 w-96 h-36">
-        <span class="text-base">Search for a Member</span><br />
-        <form action="" class="">
-          <div
-            class="relative flex items-center text-gray-400 focus-within:text-gray-600"
-          >
-            <svg
+    <div class="p-8 flex w-full rounded-md text-base">
+      <div class="flex w-96 h-16 pl-3 items-center">
+        <div class="w-full">
+          <span class="text-base">Search for a Member</span><br />
+          <form action="" class="w-full">
+            <div
+              class="relative flex items-center text-gray-400 focus-within:text-gray-600 pt-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ml-3 h-6 w-6 pointer-events-none absolute"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                class="w-full h-8 text-base pr-3 pl-10 border-none rounded-2xl text-black ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 font-semibold"
+                autocomplete="off"
+                placeholder="Search"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="bg-white h-35 w-auto ml-64">
+        <span class="text-base">Actions</span>
+        <div class="flex space-x-5">
+          <div class="relative">
+            <!-- <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="ml-3 h-6 w-6 pointer-events-none absolute"
+              class="h-6 w-6 absolute pointer-events-none"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -19,51 +49,200 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
               />
-            </svg>
-            <input
-              type="text"
-              class="text-base pr-3 pl-10 border-none rounded-2xl text-black ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 font-semibold"
-              autocomplete="off"
-              placeholder="Search Member"
-            />
-          </div>
-        </form>
+            </svg> -->
 
-        <BUTTon class="bg-blue-100 border-2 rounded-md">Search</BUTTon>
-      </div>
-      <div class="ml-14 justify-end bg-blue-900 h-35 flex-none w-auto">
-        <BUTTon class="bg-blue-100 border-2 rounded-md">Add New Member</BUTTon>
-        <BUTTon class="bg-blue-100 border-2 rounded-md"
-          >View/Edit Profile</BUTTon
-        >
-        <BUTTon class="bg-blue-100 border-2 rounded-md">Print</BUTTon>
+            <BUTTon
+              class="p-2 hover:bg-blue-700 items-center h-10 bg-blue-800 text-blue-50"
+              >Add New Member</BUTTon
+            >
+          </div>
+          <BUTTon
+            class="p-2 hover:bg-blue-700 items-center h-10 bg-blue-800 text-blue-50"
+            >Print</BUTTon
+          >
+        </div>
       </div>
     </div>
-    <div class="p-10">
-      <table class="shadow-lg bg-white">
-        <tr>
-          <th class="bg-blue-100 border text-left px-8 py-4">Company</th>
-          <th class="bg-blue-100 border text-left px-8 py-4">Contact</th>
-          <th class="bg-blue-100 border text-left px-8 py-4">Country</th>
-        </tr>
-        <tr>
-          <td class="border px-8 py-4">Alfreds Futterkiste</td>
-          <td class="border px-8 py-4">Dante Sparks</td>
-          <td class="border px-8 py-4">Italy</td>
-        </tr>
-        <tr>
-          <td class="border px-8 py-4">Centro comercial Moctezuma</td>
-          <td class="border px-8 py-4">Neal Garrison</td>
-          <td class="border px-8 py-4">Spain</td>
-        </tr>
-        <tr>
-          <td class="border px-8 py-4">Ernst Handel</td>
-          <td class="border px-8 py-4">Maggie O'Neill</td>
-          <td class="border px-8 py-4">Austria</td>
-        </tr>
-      </table>
+    <!-- Table component starts here -->
+    <div class="">
+      <div class="container mx-auto">
+        <div class="flex flex-col">
+          <div class="w-full">
+            <div class="p-8 border-b border-gray-200 shadow">
+              <table class="divide-y divide-gray-300" id="dataTable">
+                <thead class="bg-blue-800">
+                  <tr>
+                    <th class="px-6 py-2 text-xs text-white">Regcord No</th>
+                    <th class="px-6 py-2 text-xs text-white">ID</th>
+                    <th class="px-6 py-2 text-xs text-white">Name</th>
+                    <th class="px-6 py-2 text-xs text-white">
+                      Membership Type
+                    </th>
+                    <th class="px-6 py-2 text-xs text-white">
+                      Moblile Phone No
+                    </th>
+                    <th class="px-6 py-2 text-xs text-white">Email</th>
+                    <th class="px-6 py-2 text-xs text-white">
+                      Registarted Date
+                    </th>
+                    <th class="px-6 py-2 text-xs text-white">Channel Source</th>
+                    <th class="px-6 py-2 text-xs text-white">Edit</th>
+                    <th class="px-6 py-2 text-xs text-white">Delete</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-300">
+                  <tr class="text-center whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm text-gray-500">1</td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-900">Jon doe</div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-500">
+                        jhondoe@example.com
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-500">2021-1-12</td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-blue-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-red-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="text-center whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm text-gray-500">2</td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-900">Jon doe 2</div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-500">
+                        jhondoe2@example.com
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-500">2021-1-12</td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-blue-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-red-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="text-center whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm text-gray-500">3</td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-900">Jon doe 3</div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="text-sm text-gray-500">
+                        jhondoe3@example.com
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-500">2021-1-12</td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-blue-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="inline-block text-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-6 h-6 text-red-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                          />
+                        </svg>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

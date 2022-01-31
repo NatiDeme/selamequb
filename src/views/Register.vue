@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <header><h1>Register New Member</h1></header>
+  <div class="bg-white rounded-md shadow-lg">
+    <!-- <header><h1>Register New Member</h1></header> -->
 
     <div class="p-10 flex">
       <!-- Member uploading image is written here -->

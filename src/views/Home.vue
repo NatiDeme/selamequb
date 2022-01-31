@@ -1,21 +1,17 @@
-<template> 
-    <SideNav></SideNav>
-    
+<template>
+  <SideNav></SideNav>
+
   <!-- content -->
-  
-  
 </template>
 
 <script>
-import SideNav from '../components/SideNav.vue'
+import SideNav from "../components/SideNav.vue";
 
 export default {
   components: {
-    SideNav
-}
-}
+    SideNav,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

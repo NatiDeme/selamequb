@@ -1,8 +1,7 @@
 <template>
   <div>
-    <header><h1>Dashboard</h1></header>
     <!-- Cards containing the major displayable numbers -->
-    <div class="flex pl-20 pt-10 gap-x-14 gap-y-5 grid-cols-3">
+    <div class="flex pt-10 gap-x-14 gap-y-5 grid-cols-3">
       <div
         class="flex flex-col bg-yellow-400 w-96 h-60 rounded-md drop-shadow-lg p-8 shadow-xl"
       >
@@ -93,12 +92,45 @@
       </div>
     </div>
     <!-- Normal small detail cards will be listed under the cards below -->
-    <div class="pt-10 pl-20">
-      <div
-        class="flex flex-col text-base bg-blue-50 w-96 h-auto shadow-lg rounded-md"
-      >
-        <div>
-          <ChartDoughnut />
+    <div class="grid grid-cols-3 gap-4">
+      <div class="pt-10">
+        <div
+          class="flex flex-col text-base bg-blue-50 w-96 h-auto shadow-lg rounded-md"
+        >
+          <div>
+            <ChartDoughnut />
+          </div>
+        </div>
+        <!-- extra detailed numbers  -->
+      </div>
+      <div class="col-span-2">
+        <div
+          class="flex flex-col bg-yellow-400 w-full h-96 rounded-md drop-shadow-lg p-8 shadow-xl mt-10"
+        >
+          <div class="flex flex-row h-56">
+            <div class="flex flex-col">
+              <span class="font-black text-5xl">178</span>
+              <span class="pt-4 text-sm font-normal"
+                >Total Registarted Memebers</span
+              >
+            </div>
+            <div class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-28 w-28 ml-10 opacity-20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="text-base pt-10">
+            <span class="font-bold text-lg">2138 </span>
+            <span class="ml-1 font-normal">Members Remain</span>
+          </div>
         </div>
       </div>
     </div>

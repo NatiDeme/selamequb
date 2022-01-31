@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen md:flex">
+  <div class="min-h-screen flex bg-gray-50">
     <!-- sidebar -->
     <div
       class="sidebar bg-blue-800 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out"
@@ -24,7 +24,7 @@
       </a>
 
       <!-- nav -->
-      <nav>
+      <nav class="pt-8">
         <router-link
           class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
           to="/"
@@ -69,6 +69,29 @@
           <span class=""> Members</span>
         </router-link>
         <router-link
+          class="py-2.5 px-4 pl-8 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
+          to="/register"
+          active-class="active"
+          tag="button"
+          exact
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            />
+          </svg>
+          <span class="">Registration</span>
+        </router-link>
+        <!-- <router-link
           class="py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
           to="/admins"
           active-class="active"
@@ -91,29 +114,7 @@
           </svg>
           <span class="">Management</span>
         </router-link>
-        <router-link
-          class="py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
-          to="/register"
-          active-class="active"
-          tag="button"
-          exact
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-            />
-          </svg>
-          <span class="">Registration</span>
-        </router-link>
+
         <router-link
           class="py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white flex space-x-2"
           to="/admins"
@@ -160,24 +161,29 @@
             />
           </svg>
           <span class="">Guideline</span>
-        </router-link>
+        </router-link> -->
       </nav>
     </div>
-    <!-- content -->
-    <div class="flex-1 p-10 text-2xl font-bold">
-      <router-view />
+    <div class="pl-20">
+      <div class="p-10">
+        <div class="flex justify-end w-full bg-white shadow-sm rounded-md">
+          <navbar />
+        </div>
+        <div class="pt-5">
+          <router-view />
+        </div>
+      </div>
     </div>
+
+    <!-- content -->
+    <div class="flex-1 p-10"></div>
   </div>
 </template>
 <script>
+import navbar from "./navbar.vue";
 export default {
-  setup() {
-    //     const btn = document.querySelector(".mobile-menu-button");
-    // const sidebar = document.querySelector(".sidebar");
-    // // add our event listener for the click
-    // btn.addEventListener("click", () => {
-    //   sidebar.classList.toggle("-translate-x-full");
-    // });
+  components: {
+    navbar,
   },
 };
 </script>

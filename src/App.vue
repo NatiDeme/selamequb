@@ -1,32 +1,23 @@
 <template>
-
-    <div class="">
-    <!-- <SideNav/> -->
+  <div class="">
+    <!-- <navbar /> -->
+    <!-- <SideNav /> -->
     <!-- <router-link to="/">Dashboard</router-link> |
     <router-link to="/about">About</router-link> -->
-    
 
     <router-view></router-view>
- </div>
-  
+  </div>
 </template>
 
-<style>
-
-
-</style>
+<style></style>
 
 <script>
-// import SideNav from "./components/SideNav.vue";
-
+// import navbar from "./components/navbar.vue";
+// // import SideNav from "./components/SideNav.vue";
 
 // export default {
-  
 //   components: {
-//     SideNav
-// }
-// }
-
-
+//     navbar,
+//   },
+// };
 </script>
-

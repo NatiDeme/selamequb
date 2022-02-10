@@ -11,9 +11,14 @@
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
     "axios": "^0.25.0",
+    "bootstrap": "^5.1.3",
     "chart.js": "^3.7.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.21.0",
+    "datatables.net-dt": "^1.11.4",
     "es6-promise": "^4.2.8",
+    "jl-datatable": "^1.1.0",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
     "patternomaly": "^1.3.2",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
@@ -52,5 +57,18 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatiDeme/selamequb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NatiDeme/selamequb/issues"
+  },
+  "homepage": "https://github.com/NatiDeme/selamequb#readme"
 }

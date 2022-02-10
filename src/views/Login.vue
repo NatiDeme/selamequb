@@ -54,7 +54,7 @@ export default {
     submit() {
       this.login(this.form).then(() => {
         this.$router.replace({
-          name: "About",
+          name: "Dashboard",
         });
       });
     },

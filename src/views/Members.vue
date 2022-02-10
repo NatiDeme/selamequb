@@ -1,6 +1,6 @@
 <template>
   <div class="members">
-    <!-- <header><h1>Registered Members</h1></header> -->
+    <header><h1>Registered Members</h1></header>
     <div class="p-8 flex w-full rounded-md text-base">
       <div class="flex w-96 h-16 pl-3 items-center">
         <div class="w-full">

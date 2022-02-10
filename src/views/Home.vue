@@ -1,7 +1,5 @@
 <template>
   <SideNav></SideNav>
-
-  <!-- content -->
 </template>
 
 <script>

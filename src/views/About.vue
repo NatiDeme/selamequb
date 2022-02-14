@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <navbar />
     <!-- <JqueryTable /> -->
     <!-- <div class="justify-center">
       <table class="" id="dataTable">
@@ -111,11 +112,15 @@
 //   },
 // };
 //import axios from "axios";
+
+import navbar from "../components/navbar.vue";
 import Buttons from "../components/Buttons.vue";
 import JlDatatable from "jl-datatable";
+
 export default {
   components: {
     JlDatatable,
+    navbar,
   },
   data() {
     return {

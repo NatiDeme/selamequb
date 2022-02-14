@@ -4,213 +4,280 @@
       <!-- <header><h1>Register New Member</h1></header> -->
 
       <div class="p-10 flex">
-        <!-- Member uploading image is written here -->
-        <div>
-          <span class="text-md font-normal"
-            >{{ form.fname }}{{ form.lname }}</span
-          >
-          <p class="text-md font-normal">{{ fname }}</p>
-          <div
-            class="imagePreviewWrapper h-48 w-40 cursor-pointer shadow-lg border-4 rounded-md bg-gray-100"
-            :style="{ 'background-image': `url(${previewImage})` }"
-            @click="selectImage"
-          >
-            <!-- <span class="text-base font-normal">Upload Image</span> -->
-          </div>
-
-          <input ref="fileInput" type="file" @input="pickFile" class="hidden" />
+        <div class="">
+          <span class="font-bold">Registration</span>
         </div>
-        <!-- the other fields that are needed to be filled are listed here -->
-        <div class="flex flex-col ml-40 text-base w-40 font-normal">
-          <span class="text-xs">Registration Date:</span>
-          <input type="date" class="h-8 w-48 bg-gray-50" placeholder="" />
-          <span class="text-xs">Member ID Code:</span>
-          <input type="text" class="h-8 w-48 bg-gray-50" placeholder="" />
-          <span class="text-xs">POS Source:</span>
-          <select v-model="selected" class="h-8 w-48 bg-gray-50">
-            <option disabled value="">Please select one</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-          </select>
-          <span class="text-xs">Membership Type:</span>
-          <select v-model="selected" class="h-8 w-48 bg-gray-50">
-            <option disabled value="">Please select one</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-          </select>
+        <div class="flex flex-row pl-80">
+          <!-- Member uploading image is written here -->
+          <div>
+            <span class="text-md font-normal"
+              >{{ form.fname }}{{ form.lname }}</span
+            >
+            <p class="text-md font-normal">{{ fname }}</p>
+            <div
+              class="imagePreviewWrapper h-48 w-40 cursor-pointer shadow-lg border-4 rounded-md bg-gray-100"
+              :style="{ 'background-image': `url(${previewImage})` }"
+              @click="selectImage"
+            >
+              <!-- <span class="text-base font-normal">Upload Image</span> -->
+            </div>
+
+            <input
+              ref="fileInput"
+              type="file"
+              @input="pickFile"
+              class="hidden"
+            />
+          </div>
+          <!-- the other fields that are needed to be filled are listed here -->
+          <div class="flex flex-row text-base w-40 font-normal pl-11 pt-5">
+            <div class="flex flex-col gap-3 font-bold">
+              <span class="text-xs">Registration Date:</span>
+              <input
+                type="date"
+                class="h-8 w-48 border-2 pl-2 rounded-sm"
+                placeholder=""
+              />
+              <span class="text-xs">Member ID Code:</span>
+              <input
+                type="text"
+                class="h-8 w-48 bg-gray-50 pl-2 border-2 rounded-sm"
+                placeholder=""
+              />
+            </div>
+            <div class="pl-16 flex flex-col gap-3 font-bold">
+              <span class="text-xs">POS Source:</span>
+              <select
+                v-model="selected"
+                class="h-8 w-48 border-2 pl-2 rounded-sm"
+              >
+                <option>Online</option>
+                <option>Offline</option>
+                <option>C</option>
+              </select>
+              <span class="text-xs">Membership Type:</span>
+              <select
+                v-model="selected"
+                class="h-8 w-48 border-2 pl-2 rounded-sm"
+              >
+                <option>Car</option>
+                <option>House</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="">
-        <div class="flex justify-between">
-          <span>Applicant Details</span>
-          <span class="mr-64">Supportive document</span>
+      <hr class="ml-20 mr-20" />
+      <div class="p-10 flex flex-row">
+        <div class="font-bold">
+          <span>Basic Information</span>
         </div>
-        <!-- The forms are listed below -->
-        <div class="flex flex-row space-x-60 pl-20 pt-10">
-          <div class="font-normal text-base flex flex-col">
-            <span class="text-xs">First Name:</span>
-            <input
-              type="text"
-              id="fname"
-              v-model="form.fname"
-              class="text-base border-b h-8 border-black w-56"
-              placeholder="Abebe"
-            />
-            <span class="text-xs pt-2">Middle Name:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder="Balcha"
-              id="lname"
-              v-model="form.lname"
-            />
-            <span class="text-xs pt-2">Last Name:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Date of Birth:</span>
-            <input
-              type="date"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Gender:</span>
-            <select v-model="selected">
-              <option disabled value="">Please select one</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-            <span class="text-xs pt-2">Home phone:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Work phone:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Mobile phone:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Email:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-          </div>
-          <div class="w-40 font-normal text-base">
-            <span class="text-xs">Address City:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Sub City:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Woreda:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">House Number:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Kebele:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Business/Organization:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Occupation/Position:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Reference Names:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-            <span class="text-xs pt-2">Reference Contact Phone:</span>
-            <input
-              type="text"
-              class="border-b h-8 border-black w-56"
-              placeholder=""
-            />
-          </div>
-
-          <!-- document uploading frames are lister here -->
-          <div class="flex flex-row space-x-7">
-            <div class="">
-              <div
-                class="imagePreviewWrapper h-52 w-36 cursor-pointer shadow-md border-2 rounded-md bg-gray-100"
-              ></div>
-
+        <div class="pl-72">
+          <div class="flex flex-row gap-3">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">First Name:</span>
               <input
-                ref="fileInput"
-                type="file"
-                @input="pickFile"
-                class="hidden"
+                type="text"
+                id="fname"
+                v-model="form.fname"
+                class="text-base h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder="Abebe"
               />
             </div>
-            <div class="">
-              <div
-                class="imagePreviewWrapper h-52 w-36 cursor-pointer shadow-md border-2 rounded-md bg-gray-100"
-              >
-                <!-- <span class="text-base font-normal">Upload Image</span> -->
-              </div>
-
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Middle Name:</span>
               <input
-                ref="fileInput"
-                type="file"
-                @input="pickFile"
-                class="hidden"
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder="Balcha"
+                id="lname"
+                v-model="form.lname"
               />
             </div>
-            <div class="">
-              <div
-                class="imagePreviewWrapper h-52 w-36 cursor-pointer shadow-md border-2 rounded-md bg-gray-100"
-              >
-                <!-- <span class="text-base font-normal">Upload Image</span> -->
-              </div>
-
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Last Name:</span>
               <input
-                ref="fileInput"
-                type="file"
-                @input="pickFile"
-                class="hidden"
+                type="text"
+                class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="flex flex-row gap-3 pt-4">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Date of Birth:</span>
+              <input
+                type="date"
+                class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Gender:</span>
+              <select
+                v-model="selected"
+                class="pl-2 border-2 rounded-sm w-56 h-8"
+              >
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-row pt-4 gap-3">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs pt-2">Email:</span>
+              <input
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-96"
+                placeholder=""
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs pt-2">Phone Number:</span>
+              <input
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
               />
             </div>
           </div>
         </div>
+      </div>
+      <hr class="ml-20 mr-20" />
+      <div class="p-10 flex flex-row">
+        <div class="font-bold">
+          <span>Detailed Information</span>
+        </div>
+        <div class="pl-64">
+          <div class="flex flex-row gap-3">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Adress:</span>
+              <input
+                type="text"
+                id="fname"
+                v-model="form.fname"
+                class="text-base h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder="Mekanisa"
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Subcity:</span>
+              <input
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder="Laphto"
+                id="lname"
+                v-model="form.lname"
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Woreda:</span>
+              <input
+                type="text"
+                class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="flex flex-row gap-3 pt-4">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">House Number:</span>
+              <input
+                type="text"
+                class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs">Kebele:</span>
+              <input
+                type="text"
+                class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="flex flex-row pt-4 gap-3">
+            <div class="flex flex-col gap-3">
+              <span class="text-xs pt-2">Home Phone Number:</span>
+              <input
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="text-xs pt-2">Work Phone Number:</span>
+              <input
+                type="text"
+                class="h-8 pl-2 border-2 rounded-sm w-56"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <hr class="ml-20 mr-20" />
+        <div class="p-10 flex flex-row">
+          <div class="font-bold">
+            <span>Occupation</span>
+          </div>
+          <div class="pl-80">
+            <div class="flex flex-row gap-3">
+              <div class="flex flex-col gap-3">
+                <span class="text-xs">Business/Organization:</span>
+                <input
+                  type="text"
+                  id="fname"
+                  v-model="form.fname"
+                  class="text-base h-8 pl-2 border-2 rounded-sm w-56"
+                  placeholder="Mekanisa"
+                />
+              </div>
+              <div class="flex flex-col gap-3">
+                <span class="text-xs">Occupation/Position:</span>
+                <input
+                  type="text"
+                  class="h-8 pl-2 border-2 rounded-sm w-56"
+                  placeholder="Laphto"
+                  id="lname"
+                  v-model="form.lname"
+                />
+              </div>
+            </div>
+            <div class="flex flex-row gap-3 pt-4">
+              <div class="flex flex-col gap-3">
+                <span class="text-xs">Reference Name:</span>
+                <input
+                  type="text"
+                  class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                  placeholder=""
+                />
+              </div>
+              <div class="flex flex-col gap-3">
+                <span class="text-xs">Reference Contact Number:</span>
+                <input
+                  type="text"
+                  class="border-b h-8 pl-2 border-2 rounded-sm w-56"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="flex flex-row pt-4 gap-3">
+              <div class="flex flex-col gap-3">
+                <span class="text-xs pt-2">Supportive Document:</span>
+                <input
+                  type="text"
+                  class="h-20 w-96 pl-2 border-2 rounded-sm w-56"
+                  placeholder=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+
         <!-- submit button starts here -->
         <div class="flex justify-end mr-48">
           <button
